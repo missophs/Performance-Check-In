@@ -1,0 +1,20 @@
+{
+  "type": "modal",
+  "title": {
+    "type": "plain_text",
+    "text": "Performance Check-In"
+  },
+  "close": {
+    "type": "plain_text",
+    "text": "Close"
+  },
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "plain_text",
+        "text": "Saved."
+      }
+    }
+  ]
+}

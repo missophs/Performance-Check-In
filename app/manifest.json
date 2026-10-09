@@ -1,0 +1,55 @@
+{
+  "display_information": {
+    "name": "Performance Check-In",
+    "description": "Shared check-ins, goals, feedback and development",
+    "background_color": "#224466"
+  },
+  "features": {
+    "app_home": {
+      "home_tab_enabled": true,
+      "messages_tab_enabled": true
+    },
+    "bot_user": {
+      "display_name": "Performance Check-In",
+      "always_online": false
+    },
+    "slash_commands": [
+      {
+        "command": "/checkin",
+        "description": "Create a Performance Check-In",
+        "should_escape": false
+      }
+    ],
+    "shortcuts": [
+      {
+        "name": "Create a check-in",
+        "type": "global",
+        "callback_id": "pci_checkin",
+        "description": "Create a Performance Check-In"
+      }
+    ]
+  },
+  "oauth_config": {
+    "scopes": {
+      "bot": [
+        "commands",
+        "users:read",
+        "users:read.email",
+        "chat:write"
+      ]
+    }
+  },
+  "settings": {
+    "event_subscriptions": {
+      "bot_events": [
+        "app_home_opened"
+      ]
+    },
+    "interactivity": {
+      "is_enabled": true
+    },
+    "socket_mode_enabled": true,
+    "org_deploy_enabled": false,
+    "token_rotation_enabled": false
+  }
+}

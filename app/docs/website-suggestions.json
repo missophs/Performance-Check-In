@@ -1,0 +1,169 @@
+{
+  "employee": {
+    "Where I stand": [
+      "Am I meeting expectations? Be straight with me.",
+      "If my review were written today, what would it say?",
+      "Is there anything I'm doing that's holding me back?",
+      "What does doing this role really well look like to you?"
+    ],
+    "Follow-ups": [
+      "What should I follow up on from our last 1:1?",
+      "What do you expect from me before our next 1:1?",
+      "Is there anything I said I'd do that I haven't closed out?",
+      "What would you like me to do differently next time?"
+    ],
+    "Wins": [
+      "Can I walk you through how the last project actually went?",
+      "Here's something that went better than I expected — can I share it?",
+      "What did you hear about how that landed with other people?"
+    ],
+    "Priorities": [
+      "Of everything on my plate, what matters most to you this month?",
+      "If I could only finish two things this week, which two would you pick?",
+      "Has anything changed in what you need from me?"
+    ],
+    "Roadblocks": [
+      "I'm stuck on this — can we think through the options together?",
+      "What's the fastest way to unblock this?",
+      "Who else do I need to bring into this, and can you make the introduction?"
+    ],
+    "Workload": [
+      "I'm at capacity. Can we look at what comes off the list?",
+      "Does the current pace look sustainable from where you sit?",
+      "I want to flag that I'm at risk of missing something — can we reprioritise?"
+    ],
+    "Feedback": [
+      "What am I doing well right now?",
+      "What's the one thing I should improve first?",
+      "What's one thing I could do differently?",
+      "Where do you think I'm strongest right now?",
+      "Is there anything you've been meaning to tell me and haven't?"
+    ],
+    "Good to know": [
+      "Is there anything happening above my level that affects my work?",
+      "Anything you'd want me to know that we haven't talked about?",
+      "Is there something everyone seems to know that I don't?"
+    ],
+    "Recognition": [
+      "I want to flag what someone else did on this — can I tell you about it?",
+      "Can we make sure the team's work on this gets seen?"
+    ],
+    "Career": [
+      "What would it take to move toward the kind of role I want?",
+      "What experience am I missing for the next step?",
+      "Is the path I'm imagining realistic from where you sit?"
+    ],
+    "Learning & development": [
+      "Could I take the lead on something to build that skill?",
+      "What skill would make the biggest difference to my work this year?",
+      "Is there a project coming up that would stretch me?",
+      "Is there training or a course you'd support me doing this year?",
+      "I want to flag how I've been doing lately — can we talk about it?",
+      "The pace has been a lot — can we talk about what's sustainable?",
+      "Can we talk about where I am on pay and level — even if the answer is 'not yet'?",
+      "What would a promotion case for me need to show?",
+      "How do pay and promotion decisions actually get made here?",
+      "What do people here assume I know that nobody has explained?",
+      "What should I focus on learning in my first three months?",
+      "Are these conversations useful to you too? What should we change?"
+    ],
+    "Advice": [
+      "Can I get your advice on something before I decide?",
+      "How would you approach this if you were in my position?",
+      "Can we grab extra time one-on-one this week? I'd like to talk something through."
+    ],
+    "Support needed": [
+      "Here's specifically what I need from you on this.",
+      "Can you help unblock this with another team?",
+      "I'd like more context on decisions before they land — is that possible?"
+    ],
+    "Questions": [
+      "What's changing that I should know about?",
+      "How is our team's work being seen right now?",
+      "What are you worried about that I could help with?"
+    ]
+  },
+  "manager": {
+    "Where things stand": [
+      "Is what's expected of you actually clear?",
+      "Where do you think you stand right now? Let's compare notes.",
+      "If your review were today, nothing in it should surprise you — does that hold?",
+      "I want to flag something small before it becomes something big — can we talk about it?"
+    ],
+    "Follow-ups": [
+      "What did we agree last time, and where did it land?",
+      "What do you need from me before our next 1:1?",
+      "What should we make sure we come back to next time?"
+    ],
+    "Wins": [
+      "What went better than you expected recently?",
+      "What are you proudest of this month?",
+      "What's working that we should do more of?"
+    ],
+    "Priorities": [
+      "What are you focused on this week?",
+      "Is anything on your list that shouldn't be?",
+      "Are my priorities and yours actually the same right now?"
+    ],
+    "Roadblocks": [
+      "What's slowing you down that I could remove?",
+      "Where are you waiting on someone else?",
+      "What have you given up asking for?"
+    ],
+    "Workload": [
+      "How is your workload actually feeling — not the tidy answer?",
+      "What would you drop if you could?",
+      "Are you working hours you don't want to be working?"
+    ],
+    "Feedback": [
+      "Here's what I think you're doing well — can we go through it?",
+      "Here's the one thing I'd work on next — and how I can help.",
+      "What feedback would be most useful to you right now?",
+      "How am I doing at supporting you?",
+      "What do you wish I did differently as your manager?"
+    ],
+    "Good to know": [
+      "Is anything coming up — leave, deadlines, changes — I should plan around?",
+      "Anything you'd want me to know that we haven't covered?",
+      "Is there context from above that would help you make sense of things?"
+    ],
+    "Recognition": [
+      "Whose contribution here deserves more credit than it got?",
+      "How do you like being recognised — publicly, privately, or not at all?"
+    ],
+    "Career": [
+      "Where do you want to be in two years?",
+      "What kind of work do you want more of?",
+      "Is there a part of your job you'd happily never do again?"
+    ],
+    "Learning & development": [
+      "What skill do you want to build next?",
+      "What would stretch you in a good way rather than a stressful one?",
+      "Is there someone here you'd like to learn from?",
+      "Is there training or a course that would help you get where you want to go?",
+      "How are you doing, really — not just the work?",
+      "Here's the gap between expectations and what I'm seeing — let's look at it together.",
+      "What would you need from me to close this in the next month?",
+      "Let's talk about what a promotion case would need to show — and where you are against it.",
+      "What keeps you here?",
+      "What would tempt you away?",
+      "What's been confusing since you started?",
+      "Are these conversations useful to you? What should we change about them?"
+    ],
+    "Advice": [
+      "Anything you'd like my advice on — or would a sounding board be more useful?",
+      "Is there a decision you're sitting on that we should talk through?",
+      "Do you want extra time one-on-one this week, outside the usual slot?"
+    ],
+    "Team issues": [
+      "How is the team working together right now?",
+      "Is anything getting in the way between people?",
+      "Is there a conversation the team is avoiding?"
+    ],
+    "Support needed": [
+      "What do you need from me that you're not getting?",
+      "What decision are you waiting on me for?",
+      "Where am I in your way?"
+    ]
+  }
+}

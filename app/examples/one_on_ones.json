@@ -1,0 +1,244 @@
+{
+  "type": "modal",
+  "callback_id": "pci_save",
+  "private_metadata": "{\"table\":\"one_on_ones\",\"id\":\"11111111-1111-4111-8111-111111111111\"}",
+  "title": {
+    "type": "plain_text",
+    "text": "New check-in"
+  },
+  "submit": {
+    "type": "plain_text",
+    "text": "Save"
+  },
+  "close": {
+    "type": "plain_text",
+    "text": "Cancel"
+  },
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Start with what matters*\nPrepare a thoughtful 1:1, capture what matters, and agree on next steps."
+      }
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "plain_text",
+          "text": "🤝 Shared with the manager and employee in this relationship."
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "input",
+      "block_id": "pair",
+      "label": {
+        "type": "plain_text",
+        "text": "Who is this for?"
+      },
+      "hint": {
+        "type": "plain_text",
+        "text": "Choose your manager or employee."
+      },
+      "element": {
+        "type": "external_select",
+        "action_id": "pci_pair",
+        "min_query_length": 0,
+        "placeholder": {
+          "type": "plain_text",
+          "text": "Choose a working relationship"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "focus",
+      "label": {
+        "type": "plain_text",
+        "text": "What would you like to discuss?"
+      },
+      "optional": true,
+      "element": {
+        "type": "plain_text_input",
+        "action_id": "value",
+        "multiline": true,
+        "max_length": 2000,
+        "placeholder": {
+          "type": "plain_text",
+          "text": "Priorities, progress, challenges, or support you need"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "scheduled_for",
+      "label": {
+        "type": "plain_text",
+        "text": "When is your check-in?"
+      },
+      "optional": true,
+      "element": {
+        "type": "datetimepicker",
+        "action_id": "value"
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "status",
+      "label": {
+        "type": "plain_text",
+        "text": "Status"
+      },
+      "optional": false,
+      "element": {
+        "type": "static_select",
+        "action_id": "value",
+        "options": [
+          {
+            "text": {
+              "type": "plain_text",
+              "text": "Preparing"
+            },
+            "value": "preparing"
+          },
+          {
+            "text": {
+              "type": "plain_text",
+              "text": "In progress"
+            },
+            "value": "in_progress"
+          },
+          {
+            "text": {
+              "type": "plain_text",
+              "text": "Closed"
+            },
+            "value": "closed"
+          }
+        ]
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*After your conversation*\nCapture the takeaways now, or come back to them later."
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "discussed_summary",
+      "label": {
+        "type": "plain_text",
+        "text": "What did you discuss?"
+      },
+      "optional": true,
+      "element": {
+        "type": "plain_text_input",
+        "action_id": "value",
+        "multiline": true,
+        "max_length": 2000
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "agreed_summary",
+      "label": {
+        "type": "plain_text",
+        "text": "What did you agree on?"
+      },
+      "optional": true,
+      "element": {
+        "type": "plain_text_input",
+        "action_id": "value",
+        "multiline": true,
+        "max_length": 2000,
+        "placeholder": {
+          "type": "plain_text",
+          "text": "Decisions, commitments, and next steps"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "revisit_summary",
+      "label": {
+        "type": "plain_text",
+        "text": "What should you revisit?"
+      },
+      "optional": true,
+      "element": {
+        "type": "plain_text_input",
+        "action_id": "value",
+        "multiline": true,
+        "max_length": 2000
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "start_feedback",
+      "label": {
+        "type": "plain_text",
+        "text": "Start doing"
+      },
+      "optional": true,
+      "element": {
+        "type": "plain_text_input",
+        "action_id": "value",
+        "multiline": true,
+        "max_length": 2000
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "stop_feedback",
+      "label": {
+        "type": "plain_text",
+        "text": "Stop doing"
+      },
+      "optional": true,
+      "element": {
+        "type": "plain_text_input",
+        "action_id": "value",
+        "multiline": true,
+        "max_length": 2000
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "continue_feedback",
+      "label": {
+        "type": "plain_text",
+        "text": "Keep doing"
+      },
+      "optional": true,
+      "element": {
+        "type": "plain_text_input",
+        "action_id": "value",
+        "multiline": true,
+        "max_length": 2000
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "follow_up_on",
+      "label": {
+        "type": "plain_text",
+        "text": "Follow up on"
+      },
+      "optional": true,
+      "element": {
+        "type": "datepicker",
+        "action_id": "value"
+      }
+    }
+  ]
+}

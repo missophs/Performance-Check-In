@@ -1,0 +1,161 @@
+{
+  "type": "modal",
+  "callback_id": "pci_save",
+  "private_metadata": "{\"table\":\"development_plans\",\"id\":\"11111111-1111-4111-8111-111111111111\"}",
+  "title": {
+    "type": "plain_text",
+    "text": "New development plan"
+  },
+  "submit": {
+    "type": "plain_text",
+    "text": "Save"
+  },
+  "close": {
+    "type": "plain_text",
+    "text": "Cancel"
+  },
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Start with what matters*\nMake room for learning, growth, and new opportunities."
+      }
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "plain_text",
+          "text": "🤝 Shared with the manager and employee in this relationship."
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "input",
+      "block_id": "pair",
+      "label": {
+        "type": "plain_text",
+        "text": "Who is this for?"
+      },
+      "hint": {
+        "type": "plain_text",
+        "text": "Choose your manager or employee."
+      },
+      "element": {
+        "type": "external_select",
+        "action_id": "pci_pair",
+        "min_query_length": 0,
+        "placeholder": {
+          "type": "plain_text",
+          "text": "Choose a working relationship"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "title",
+      "label": {
+        "type": "plain_text",
+        "text": "Title"
+      },
+      "optional": false,
+      "element": {
+        "type": "plain_text_input",
+        "action_id": "value",
+        "multiline": false,
+        "max_length": 200,
+        "placeholder": {
+          "type": "plain_text",
+          "text": "Give this a short, clear title"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "development_goal",
+      "label": {
+        "type": "plain_text",
+        "text": "Development goal"
+      },
+      "optional": true,
+      "element": {
+        "type": "plain_text_input",
+        "action_id": "value",
+        "multiline": true,
+        "max_length": 2000
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "plan_text",
+      "label": {
+        "type": "plain_text",
+        "text": "Your plan"
+      },
+      "optional": true,
+      "element": {
+        "type": "plain_text_input",
+        "action_id": "value",
+        "multiline": true,
+        "max_length": 2000,
+        "placeholder": {
+          "type": "plain_text",
+          "text": "Outline the steps, support, and learning opportunities"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "status",
+      "label": {
+        "type": "plain_text",
+        "text": "Status"
+      },
+      "optional": false,
+      "element": {
+        "type": "static_select",
+        "action_id": "value",
+        "options": [
+          {
+            "text": {
+              "type": "plain_text",
+              "text": "Active"
+            },
+            "value": "active"
+          },
+          {
+            "text": {
+              "type": "plain_text",
+              "text": "Completed"
+            },
+            "value": "completed"
+          },
+          {
+            "text": {
+              "type": "plain_text",
+              "text": "Paused"
+            },
+            "value": "paused"
+          }
+        ]
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "target_date",
+      "label": {
+        "type": "plain_text",
+        "text": "Target date"
+      },
+      "optional": true,
+      "element": {
+        "type": "datepicker",
+        "action_id": "value"
+      }
+    }
+  ]
+}

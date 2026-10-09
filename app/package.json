@@ -1,0 +1,26 @@
+{
+  "name": "performance-check-in",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/index.js",
+    "connect": "node --env-file-if-exists=.env src/connect.js",
+    "test": "node --test",
+    "examples": "node src/examples.js",
+    "check": "node --env-file-if-exists=.env src/check.js",
+    "preflight": "node --env-file-if-exists=.env src/preflight.js",
+    "worker:build": "wrangler deploy --dry-run",
+    "manifest:http": "node scripts/http-manifest.js"
+  },
+  "dependencies": {
+    "@slack/bolt": "^4.0.0",
+    "@supabase/supabase-js": "^2.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.147.0"
+  }
+}

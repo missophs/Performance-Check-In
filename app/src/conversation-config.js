@@ -1,0 +1,34 @@
+import suggestions from '../docs/website-suggestions.json' with {type:'json'};
+const text=(key,label)=>({key,label});
+const select=(key,label,options)=>({key,label,options});
+const date=(key,label)=>({key,label,date:true});
+export const prompts={
+ employee:['What are you most proud of since your last check-in?',"What's going well right now?","What's getting in your way?",'Where do you need more support?','What would you like to accomplish next?','Anything you want to make sure you discuss with your manager?','Other — anything at all on your mind?'],
+ manager:['What is this person doing particularly well?','What impact are they having?','What should they keep doing?','Where could they improve?','What specific examples support that?','What support can you provide?','Are expectations clear? What might not be landing?','What skills could they build next?','Is there a stretch assignment that would grow them?','Other — anything at all on your mind?']
+};
+export const questionOptions=role=>Object.entries(suggestions[role]).flatMap(([category,questions])=>questions.map((question,index)=>({category,question,value:category+':'+index})));
+export const sections={
+ topics:{label:'Check-in',fields:[select('category','Topic category',['Wins','Priorities','Roadblocks','Workload','Feedback','Recognition','Career','Development','Team issues','Questions','Support needed','Other']),{key:'suggestion',label:'Suggested discussion question',suggestions:true},text('other','Your own topic or additional topics'),text('why','Anything else you want to discuss?'),date('meeting_date','Meeting date')]},
+ prep:{label:'Progress & support',fields:[]},
+ achievements:{label:'Achievements',fields:[select('category','Category',['Business results','Customer impact','Collaboration','Leadership','Problem solving','Innovation','Operational improvement','Team contribution','Other']),text('title','What happened?'),text('impact','What difference did it make?'),date('date','When?')]},
+ goals:{label:'Goals & growth',fields:[text('title','The goal'),text('why','Why it matters'),text('measure',"How will you know it worked?"),date('date','Target date'),select('status','Status',['Not Started','In Progress','At Risk','Complete','Deferred']),select('progress','Progress',Array.from({length:21},(_,i)=>String(i*5)+'%')),text('obstacles',"What's in the way?"),text('support','What support is needed?'),text('development','Skills or learning to develop'),text('career','Career interests or next steps')]},
+ development_plans:{label:'Development',fields:[text('title','Development area'),text('why','Why it matters'),select('type','Type',['Course','Training','Coaching','Mentoring','Job shadowing','Stretch assignment','New project','Conference','Certification','Reading / resource','Peer learning','Leadership exposure','Cross-functional experience','Other']),text('activity','The activity'),text('support','What will the manager do to support this?'),date('date','Target date'),select('status','Status',['Not Started','In Progress','Complete','Deferred']),text('measure',"How will you know it worked?")]},
+ career_conversations:{label:'Career',fields:[text('direction','Where would you like your career to go?'),text('interests','What kind of work interests you?'),text('skills','What skills could be developed?'),text('experience','What experience would support growth?'),text('responsibilities','What responsibilities could come next?')]},
+ feedback:{label:'Feedback',fields:[{key:'type',label:'Type',feedbackType:true},text('observation','What happened?'),text('impact','What was the impact?'),text('next','What would help or what should continue?')]},
+ feedback_requests:{label:'Request feedback',fields:[text('question','What feedback would you like?'),select('status','Status',['Open','Answered'])]},
+ actions:{label:'Follow-up actions',fields:[text('title','What needs to happen?'),text('details','Details'),select('owner','Owner',['Employee','Manager','Both of us']),date('date','Due date'),select('status','Status',['Open','In Progress','Blocked','Done'])]},
+ wrap:{label:'Conversation summary',fields:[text('discussed','What did you discuss?'),text('agreed','What did you agree on?'),text('revisit','What should you revisit?'),text('start','Start doing'),text('stop','Stop doing'),text('continue','Keep doing'),date('follow_up','Next check-in date')]},
+ performance_updates:{label:'Private manager notes',private:true,managerOnly:true,fields:[text('observation','What happened?'),text('expectation','What was the expectation?'),text('impact','What was the impact?'),select('communicated','Was the expectation communicated?',['Yes, in writing','Yes, verbally','Partly','No','Not sure']),select('previous','Has this been discussed before?',['No, this is the first time','Yes, once','Yes, more than once']),text('support','Support and next steps')]},
+ review_prep_drafts:{label:'Private review draft',private:true,fields:[text('draft','Your review draft')]}
+};
+export const stepsFor=type=>type==='one_on_ones'?['topics','prep','achievements','goals','development_plans','career_conversations','feedback','feedback_requests','actions','wrap']:[type==='agenda_topics'?'topics':type];
+export function fieldsFor(step,role,response=false){
+ if(response&&step!=='feedback')return [select('agreement','Do you agree with this area?',['Agree','Partly agree','Disagree','I have a question']),text('response','Your response about '+sections[step].label)];
+ if(step==='feedback')return role==='manager'?[text('question','Ask your employee for feedback on you as their manager')]:[select('agreement','Do you agree with the information?',['Agree','Partly agree','Disagree','I have a question']),text('observation','Your comments or corrections'),text('manager_feedback','Feedback for your manager')];
+ if(step==='prep')return prompts[role].map((label,i)=>text('q'+i,label)).filter(f=>!['What specific examples support that?','What support can you provide?'].includes(f.label));
+ if(step==='career_conversations')return (role==='manager'?
+   ['What strengths do you see in this employee?','What capabilities should they develop?','What experiences could help them grow?','What responsibilities could they take on next?']:
+   ['Where would you like your career to go?','What kind of work interests you?','What skills would you like to build?','What experience would help you move toward your next role?','Are you interested in managing people?'])
+   .map((label,i)=>text(sections.career_conversations.fields[i].key,label));
+ return sections[step].fields.map(f=>f.suggestions?{...f,options:[...questionOptions(role).map(o=>({label:o.question,value:o.value})),'Other — write my own topic']}:f.feedbackType?{...f,options:role==='manager'?['Recognition','Coaching','Performance feedback','Expectations','Development feedback']: ["What's working",'What could improve','Support I need','What would help me succeed']}:f);
+}

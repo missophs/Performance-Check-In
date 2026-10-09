@@ -1,0 +1,110 @@
+{
+  "type": "modal",
+  "callback_id": "pci_save",
+  "private_metadata": "{\"table\":\"achievements\",\"id\":\"11111111-1111-4111-8111-111111111111\"}",
+  "title": {
+    "type": "plain_text",
+    "text": "New achievement"
+  },
+  "submit": {
+    "type": "plain_text",
+    "text": "Save"
+  },
+  "close": {
+    "type": "plain_text",
+    "text": "Cancel"
+  },
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Start with what matters*\nKeep a record of wins, contributions, and progress."
+      }
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "plain_text",
+          "text": "🤝 Shared with the manager and employee in this relationship."
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "input",
+      "block_id": "pair",
+      "label": {
+        "type": "plain_text",
+        "text": "Who is this for?"
+      },
+      "hint": {
+        "type": "plain_text",
+        "text": "Choose your manager or employee."
+      },
+      "element": {
+        "type": "external_select",
+        "action_id": "pci_pair",
+        "min_query_length": 0,
+        "placeholder": {
+          "type": "plain_text",
+          "text": "Choose a working relationship"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "title",
+      "label": {
+        "type": "plain_text",
+        "text": "Title"
+      },
+      "optional": false,
+      "element": {
+        "type": "plain_text_input",
+        "action_id": "value",
+        "multiline": false,
+        "max_length": 200,
+        "placeholder": {
+          "type": "plain_text",
+          "text": "Give this a short, clear title"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "details",
+      "label": {
+        "type": "plain_text",
+        "text": "Details"
+      },
+      "optional": true,
+      "element": {
+        "type": "plain_text_input",
+        "action_id": "value",
+        "multiline": true,
+        "max_length": 2000,
+        "placeholder": {
+          "type": "plain_text",
+          "text": "Add a little context"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "occurred_on",
+      "label": {
+        "type": "plain_text",
+        "text": "Occurred on"
+      },
+      "optional": true,
+      "element": {
+        "type": "datepicker",
+        "action_id": "value"
+      }
+    }
+  ]
+}

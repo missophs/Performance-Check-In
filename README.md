@@ -1,44 +1,27 @@
 # Performance Check-In
 
-Slack check-ins between a manager and a colleague. The manager chooses the topics, saves a private draft, sends it once, and the colleague replies in Slack. People write and send every check-in. The app does not score or analyze what they write.
+Performance Check-In is a human-led Slack app for private, two-way conversations between an approved manager and employee. It is a **limited pilot**, not an enterprise rollout.
 
-## The problem
+## How it works
 
-Annual reviews arrive late and rest on memory. Managers need an easy way to give feedback in the moment, and colleagues need a way to answer, without adding HR overhead to daily work.
+1. Choose an assigned colleague and the discussion areas you need.
+2. Save answers in a private draft. The app offers suggested questions from a preset library.
+3. Review the selected areas and send them together. Private manager notes stay private.
+4. The recipient gets a Slack message, reads the submitted check-in, and responds by area.
 
-## How a check-in moves
+## Optional AI Assist
 
-1. **Choose.** Pick an assigned colleague and the discussion areas needed.
-2. **Save a draft.** Add answers over time. A saved draft is private and can be edited.
-3. **Send once.** Review all chosen areas, then send them together. Private notes stay private.
-4. **Read and reply.** The recipient gets a Slack message and can respond to each area.
+With explicit consent, AI Assist can draft discussion questions, a summary, or proposed follow-up actions from one selected saved entry. A person edits and approves the draft before it is saved privately, then reviews and sends it separately. Private notes are excluded. Shared fields are sent to OpenAI only after consent. The app does not create performance ratings or make employment decisions. AI can make mistakes, so human fact-checking is required.
 
-## Where AI fits
+The three AI modes generated, were edited, approved, and submitted in a synthetic live pilot. Recipient-side AI follow-up and broader operational checks remain.
 
-- **Now:** AI helped build the pilot. People write and send every check-in, and the app does not analyze their words.
-- **Limits:** No AI ratings. No employment decisions. No employee data goes to a model in this pilot.
-- **Later:** AI could suggest questions, draft summaries, and propose follow-up actions for people to review and edit. That needs IT and privacy approval and human review first.
+## Hosting and governance
 
-AI is an enabler here, not the point. The work was redesigned around the outcome (a timely, two-way conversation) before any AI was considered.
+Slack is the interface, Cloudflare hosts the app, and Supabase stores records with access rules. Today, access is limited to one approved pair in one Slack workspace. Before expansion, IT and privacy teams should own access and assignments, onboarding and offboarding, provider approval, retention, backups, audit needs, support, and AI usage and cost controls. Bulk roster upload and HRIS synchronization are future work.
 
-## How it runs
+## Repository contents
 
-Slack, Cloudflare, and Supabase. Cloudflare keeps it online. Supabase stores records and limits who can read them.
+- [`app/`](app/) — Slack and Cloudflare source, Supabase migrations, and automated tests.
+- [`presentations/`](presentations/) — editable PowerPoint overviews of the current pilot.
 
-## Results
-
-A pilot with a DHW Consulting client reached 50% of the workforce, and 40% of users reported feedback they could act on. Based on that, I added manager-selected discussion topics and manager-only notes.
-
-## Status
-
-Running as a pilot: one approved pair in one workspace. Two-way cloud delivery has been tested.
-
-Not built yet: live AI, bulk roster upload, and HRIS sync.
-
-Before any wider rollout, IT should own access, onboarding, security, privacy, retention, backups, audit needs, and support.
-
-## Code
-
-Code is not published yet. This page describes the product and how it is governed.
-
-Built by [Melissa Weiss](https://github.com/missophs).
+The local test suite passed **86 tests** on October 9, 2026. Deployment credentials, private operational notes, user records, and dependency folders are intentionally excluded from this public repository. See [`app/README.md`](app/README.md) for technical details.

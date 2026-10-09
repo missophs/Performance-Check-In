@@ -1,0 +1,243 @@
+{
+  "type": "home",
+  "blocks": [
+    {
+      "type": "header",
+      "text": {
+        "type": "plain_text",
+        "text": "Performance Check-In"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Better conversations. Meaningful progress.*\nA place to reflect, celebrate wins, and plan what comes next."
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Conversations*\nPrepare your 1:1, choose topics, and follow through."
+      }
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "1:1 check-ins"
+          },
+          "action_id": "pci_feature_one_on_ones",
+          "value": "{\"table\":\"one_on_ones\"}"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Agenda topics"
+          },
+          "action_id": "pci_feature_agenda_topics",
+          "value": "{\"table\":\"agenda_topics\"}"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Follow-up actions"
+          },
+          "action_id": "pci_feature_actions",
+          "value": "{\"table\":\"actions\"}"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Progress & growth*\nKeep achievements, goals, and development in view."
+      }
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Achievements"
+          },
+          "action_id": "pci_feature_achievements",
+          "value": "{\"table\":\"achievements\"}"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Goals"
+          },
+          "action_id": "pci_feature_goals",
+          "value": "{\"table\":\"goals\"}"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Development plans"
+          },
+          "action_id": "pci_feature_development_plans",
+          "value": "{\"table\":\"development_plans\"}"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Career conversations"
+          },
+          "action_id": "pci_feature_career_conversations",
+          "value": "{\"table\":\"career_conversations\"}"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Feedback*\nAsk for feedback or record feedback you received."
+      }
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Feedback requests"
+          },
+          "action_id": "pci_feature_feedback_requests",
+          "value": "{\"table\":\"feedback_requests\"}"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Feedback"
+          },
+          "action_id": "pci_feature_feedback",
+          "value": "{\"table\":\"feedback\"}"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Your private drafts*\nPrepare for a review in a draft only you can see."
+      }
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Private review drafts"
+          },
+          "action_id": "pci_feature_review_prep_drafts",
+          "value": "{\"table\":\"review_prep_drafts\"}"
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*1:1 check-ins*\nPrepare a thoughtful 1:1, capture what matters, and agree on next steps."
+      }
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "New check-in"
+          },
+          "action_id": "pci_new",
+          "value": "{\"table\":\"one_on_ones\"}",
+          "style": "primary"
+        },
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Refresh"
+          },
+          "action_id": "pci_page",
+          "value": "{\"table\":\"one_on_ones\",\"page\":0}"
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*A fresh start*"
+      }
+    },
+    {
+      "type": "section",
+      "text": {
+        "type": "plain_text",
+        "text": "Create your first check-in when you’re ready. A few thoughtful words are a great place to begin."
+      }
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "plain_text",
+          "text": "🤝 Shared with the manager and employee in this relationship."
+        }
+      ]
+    },
+    {
+      "type": "actions",
+      "elements": [
+        {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Policies & retention"
+          },
+          "action_id": "pci_policies",
+          "value": "{}"
+        }
+      ]
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "plain_text",
+          "text": "Human-led conversations • AI assistance is unavailable"
+        }
+      ]
+    }
+  ]
+}

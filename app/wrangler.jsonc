@@ -1,0 +1,15 @@
+{
+  "name": "performance-check-in-pilot",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-05",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "PCI_AI_ENABLED": "true",
+    "PCI_AI_MODEL": "gpt-4.1-mini"
+  }
+}

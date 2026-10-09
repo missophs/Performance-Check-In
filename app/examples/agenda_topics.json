@@ -1,0 +1,187 @@
+{
+  "type": "modal",
+  "callback_id": "pci_save",
+  "private_metadata": "{\"table\":\"agenda_topics\",\"id\":\"11111111-1111-4111-8111-111111111111\"}",
+  "title": {
+    "type": "plain_text",
+    "text": "New agenda topic"
+  },
+  "submit": {
+    "type": "plain_text",
+    "text": "Save"
+  },
+  "close": {
+    "type": "plain_text",
+    "text": "Cancel"
+  },
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Start with what matters*\nGive your next conversation a clear focus."
+      }
+    },
+    {
+      "type": "context",
+      "elements": [
+        {
+          "type": "plain_text",
+          "text": "🤝 Shared with the manager and employee in this relationship."
+        }
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "input",
+      "block_id": "pair",
+      "label": {
+        "type": "plain_text",
+        "text": "Who is this for?"
+      },
+      "hint": {
+        "type": "plain_text",
+        "text": "Choose your manager or employee."
+      },
+      "element": {
+        "type": "external_select",
+        "action_id": "pci_pair",
+        "min_query_length": 0,
+        "placeholder": {
+          "type": "plain_text",
+          "text": "Choose a working relationship"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "parent",
+      "label": {
+        "type": "plain_text",
+        "text": "1:1 check-in"
+      },
+      "element": {
+        "type": "external_select",
+        "action_id": "pci_parent",
+        "min_query_length": 0,
+        "placeholder": {
+          "type": "plain_text",
+          "text": "Choose a check-in"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "topic",
+      "label": {
+        "type": "plain_text",
+        "text": "Topic"
+      },
+      "optional": false,
+      "element": {
+        "type": "plain_text_input",
+        "action_id": "value",
+        "multiline": false,
+        "max_length": 200,
+        "placeholder": {
+          "type": "plain_text",
+          "text": "What would you like to talk about?"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "category",
+      "label": {
+        "type": "plain_text",
+        "text": "Category"
+      },
+      "optional": false,
+      "element": {
+        "type": "plain_text_input",
+        "action_id": "value",
+        "multiline": false,
+        "max_length": 2000
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "why_it_matters",
+      "label": {
+        "type": "plain_text",
+        "text": "Why does this matter?"
+      },
+      "optional": true,
+      "element": {
+        "type": "plain_text_input",
+        "action_id": "value",
+        "multiline": true,
+        "max_length": 2000,
+        "placeholder": {
+          "type": "plain_text",
+          "text": "What makes this worth discussing?"
+        }
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "status",
+      "label": {
+        "type": "plain_text",
+        "text": "Status"
+      },
+      "optional": false,
+      "element": {
+        "type": "static_select",
+        "action_id": "value",
+        "options": [
+          {
+            "text": {
+              "type": "plain_text",
+              "text": "Open"
+            },
+            "value": "open"
+          },
+          {
+            "text": {
+              "type": "plain_text",
+              "text": "Discussed"
+            },
+            "value": "discussed"
+          },
+          {
+            "text": {
+              "type": "plain_text",
+              "text": "Follow up"
+            },
+            "value": "follow_up"
+          },
+          {
+            "text": {
+              "type": "plain_text",
+              "text": "Parking lot"
+            },
+            "value": "parking_lot"
+          }
+        ]
+      }
+    },
+    {
+      "type": "input",
+      "block_id": "note",
+      "label": {
+        "type": "plain_text",
+        "text": "Note"
+      },
+      "optional": true,
+      "element": {
+        "type": "plain_text_input",
+        "action_id": "value",
+        "multiline": true,
+        "max_length": 2000
+      }
+    }
+  ]
+}
